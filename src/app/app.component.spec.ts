@@ -1,12 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
+import { DisplayComponent } from './display/display.component';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent, FormComponent, DisplayComponent],
+      imports: [FormsModule, ReactiveFormsModule, HttpClientTestingModule],
     }).compileComponents();
   }));
 
@@ -26,6 +29,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to myApp!');
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Welcome to myApp!'
+    );
   });
 });
