@@ -4,13 +4,33 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MyService } from './my.service';
 
 describe('MyService', () => {
+  let service: MyService;
+
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     })
   );
+
+  beforeEach(() => {
+    service = TestBed.get(MyService);
+  });
+
   it('should be created', () => {
-    const service: MyService = TestBed.get(MyService);
     expect(service).toBeTruthy();
+  });
+
+  it('#formatData should return an object contains description and dataList property.', () => {
+    const text = 'test test, test1 test1 test1.';
+    service.data$.subscribe((resultData) => {
+      expect(resultData).toEqual({
+        description: text,
+        dataList: [
+          { word: 'test', occurance: 2 },
+          { word: 'test1', occurance: 3 },
+        ],
+      });
+    });
+    service.formatData(text);
   });
 });
