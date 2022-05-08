@@ -1,0 +1,16 @@
+<div class="form-container">
+  <form  [formGroup]="formData">
+    <div class="row">
+      <label>Enter Long Text
+        <textarea formControlName="textField"></textarea>
+      </label>
+      <button  (click)="onInputClick()"> OK </button>  
+    </div>
+    <div class="row">
+        <label>Enter URL
+          <input type="text" formControlName="inputField" />
+        </label>
+        <button (click)="onURLClick()"> OK </button>  
+      </div>
+  </form>
+</div>

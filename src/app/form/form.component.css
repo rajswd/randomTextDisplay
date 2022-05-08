@@ -1,0 +1,30 @@
+.row {
+    margin: 2em;
+}
+
+textarea, input {
+    width: 100%;
+    margin: 7px 0;
+    padding: 7px;
+}
+
+textarea{
+    height: 120px;
+    resize: none;
+    transition: all .1s linear;
+}
+input:focus-visible, textarea:focus-visible {
+    outline: 1px solid gray;
+    border: none !important;
+}
+
+button {
+    background: cadetblue;
+    border: none;
+    padding: 0.5em 2.5em;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.row .ng-touched.ng-invalid {
+    border: 1px solid red;
+}
