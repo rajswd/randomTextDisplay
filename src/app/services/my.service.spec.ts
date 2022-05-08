@@ -20,7 +20,7 @@ describe('MyService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('#formatData should return an object contains description and dataList property.', () => {
+  it('#formatData should trigger  an observable object which contains description and dataList property.', () => {
     const text = 'test test, test1 test1 test1.';
     service.data$.subscribe((resultData) => {
       expect(resultData).toEqual({
