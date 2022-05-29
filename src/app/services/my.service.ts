@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,14 @@ export class MyService {
     }, err => {
       sub.unsubscribe();
     });
+  }
+
+  getDataList(): Observable<any> {
+    return this.api.get('/api/v1/data/todos');
+  }
+
+  saveUser(payload: any): Observable<any> {
+    return this.api.post('/api/v1/data/todos', payload);
   }
 
 }

@@ -2,8 +2,10 @@
 <div class="app-component">
   <h2> Welcome to {{ title }}! </h2>
 
-  <app-form></app-form>
-
-  <app-display></app-display>
+  <nav>
+    <a routerLink="/home">Home</a>
+    <a routerLink="/curd">Curd Applications</a>
+  </nav>
+  <router-outlet></router-outlet>
 
 </div>

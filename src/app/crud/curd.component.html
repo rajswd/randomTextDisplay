@@ -1,0 +1,56 @@
+<div class="crud-container">
+  <form  [formGroup]="formData">
+    <div class="row">
+      <label><span>Enter Fist Name</span>
+        <input type="text" formControlName="f_name" />
+      </label>
+    </div>
+    <div class="row">
+      <label><span>Enter Last Name</span>
+        <input type="text" formControlName="l_name" />
+      </label>
+    </div>
+    <div class="row">
+      <label><span>Enter Location</span>
+        <input type="text" formControlName="location" />
+      </label>
+    </div>
+    <div class="row">
+      <label><span>Is Active </span>
+        <input type="checkbox" formControlName="active" />
+      </label>
+    </div>
+
+      <div class="row">
+        <button (click)="onReset()"> Reset </button>
+        <button  (click)="onSave()"> Save </button>
+      </div>
+  </form>
+
+<div class="view-container">
+  <div class="data-block">
+    <p>
+      {{description}}
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <td> ID </td>
+          <td> Name </td>
+          <td> Location </td>
+          <td> Status </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataList;let i = index;">
+          <td>{{i+1}}</td>
+          <td>{{item.f_name}} {{item.l_name}}</td>
+          <td>{{item.location}}</td>
+          <td>{{item.active}}</td>
+        </tr>
+      </tbody>
+    </table>  
+  </div>
+</div>
+
+</div>
