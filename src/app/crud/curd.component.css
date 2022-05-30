@@ -1,3 +1,6 @@
+.crud-container {
+    display: flex;
+}
 .row {
     margin: 2em;
 }
